@@ -1,0 +1,10 @@
+server:
+  port: ${SERVER_PORT:8081}
+zuul:
+  routes:
+    supply-service:
+      path: /ss/**
+      url: ${SUPPLY_SERVICE_URL:http://localhost:8080/api}
+    supply-ui:
+      path: /ui/**
+      url: ${SUPPLY_UI_URL:http://localhost:3000}
